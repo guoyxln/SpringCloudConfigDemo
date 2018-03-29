@@ -1,0 +1,21 @@
+server.port: 8762
+
+spring.application.name: config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/guoyxln/SpringCloudConfigDemoRepository.git
+          username: Your GitHub User Name
+          password: Your GitHub Password
+          search-paths: '{application}/{profile},{application}'
+
+
+management.security.enabled: false
